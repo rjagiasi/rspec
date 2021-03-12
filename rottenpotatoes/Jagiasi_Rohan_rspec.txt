@@ -1,0 +1,20 @@
+
+MoviesController
+  search for similar movie
+    calls similar movies
+    gets similar movies
+    redirect to home if nil
+
+Movie
+  find similar movies
+    director exists
+      finds similar movies correctly
+    director does not exist
+      gives nil
+
+1 deprecation warning total
+
+Finished in 0.33228 seconds (files took 1.83 seconds to load)
+5 examples, 0 failures
+
+Coverage report generated for Cucumber Features, RSpec to /home/ec2-user/environment/rspec/rottenpotatoes/coverage. 49 / 57 LOC (85.96%) covered.
