@@ -33,6 +33,8 @@ module NavigationHelpers
         edit_movie_path(movie.id)
       when 'details'
         movie_path(movie)
+      when 'Similar Movies'
+        search_movie_path($2)
       end
     
     when /^the (RottenPotatoes )?home\s?page$/ then '/movies'

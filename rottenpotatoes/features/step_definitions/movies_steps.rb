@@ -28,3 +28,36 @@ Then /the director of "(.*)" should be "(.*)"/ do |movie_name, director_name|
   movie = Movie.find_by(title: movie_name)
   expect(movie.director).to eq director_name
 end
+
+Then /(.*) seed movies should exist/ do | n_seeds |
+  Movie.count.should be n_seeds.to_i
+end
+
+Then /These movies are visible - (.*)/ do |movie_list|
+  # pending # Write code here that turns the phrase above into concrete actions
+  movies = movie_list.split(', ')
+  for movie in movies
+    step "I should see " + movie
+  end
+end
+
+Then /These movies are not visible - (.*)/ do |movie_list|
+  # pending # Write code here that turns the phrase above into concrete actions
+  movies = movie_list.split(', ')
+  for movie in movies
+    step "I should not see " + movie
+  end
+end
+
+Then /I should see order (.*)/ do |movie_list|
+  # pending # Write code here that turns the phrase above into concrete actions
+  movies = movie_list.split(', ')
+  # for movie in movies
+  #   step "I should not see " + movie
+  # end
+  
+  0.upto(movies.length()-2) do |i|
+    # log(movies[i])
+    step "I should see " + movies[i] + " before " + movies[i+1] 
+  end
+end
